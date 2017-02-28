@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class JDBCtest {
-
+	//Ìí¼Ó±¸×¢
 	public static void main(String[] args) {
 		String name="scott";
 		String password="Password123";
@@ -21,7 +21,7 @@ public class JDBCtest {
 			preparedStatement.setString(1, "7369");
 			resultSet=preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				System.out.println(resultSet.getString(2));
+				System.out.println(resultSet.getString("job"));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
