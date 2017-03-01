@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+	<select id="selectEmpByEmpno" parameterType="int" resultType="com.mengll.bean.Emp">
+		select * from emp_test where empno=#{empno}
+	</select>
+	<select id="selectEmpByName" parameterType="String" resultType="com.mengll.bean.Emp">
+		select * from emp_test where ename like '%${value}%'
+	</select>
+	<insert id="insertEmp" parameterType="com.mengll.bean.Emp">
+		insert into emp_test values (#{empno},#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm})
+	</insert>
+</mapper>
