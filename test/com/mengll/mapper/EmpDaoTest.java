@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import com.mengll.bean.Emp;
 
+
 public class EmpDaoTest {
 	private SqlSessionFactory sqlSessionFactory;
 

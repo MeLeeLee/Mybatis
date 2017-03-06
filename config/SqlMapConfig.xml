@@ -4,10 +4,19 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
   
 <configuration>
-	<properties resource="log4j.properties">
+	<!-- 配置文件引入 -->
+	<!-- <properties resource="log4j.properties">
 		<property name="" value=""/>
-	</properties>
-    <!-- 配置mybatis的环境信息，与spring整合，该信息由spring来管理 -->  
+	</properties> -->
+	<!-- 框架参数设置 -->
+	<!-- <settings>
+		<setting name="" value=""/>
+	</settings> -->
+	<!-- 别名 -->
+	<!-- <typeAliases>
+		<typeAlias type="" alias=""/>
+	</typeAliases> -->
+    <!-- 配置mybatis的环境信息，与spring整合，该信息由sprinmg来管理 -->  
     <environments default="development">  
         <environment id="development">  
             <!-- 配置JDBC事务控制，由mybatis进行管理 -->  
@@ -23,6 +32,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     </environments> 
     <mappers>
     	<mapper resource="sqlMap/User.xml"/>
-    	<mapper resource="mapper/UserMapper.xml"/>
+    	<!-- 指定单个文件加载 -->
+    	<!-- <mapper resource="mapper/EmpDao.xml"/> -->
+    	<!-- 指定类加载 -->
+    	<!-- <mapper class="com.mengll.mapper.EmpDao"/> -->
+    	<!-- 指定包加载 -->
+    	<package name="com.mengll.mapper"/>
     </mappers>
 </configuration> 

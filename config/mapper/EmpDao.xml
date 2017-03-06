@@ -6,4 +6,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<select id="selectEmpByEmpno" parameterType="int" resultType="com.mengll.bean.Emp">
 		select * from emp_test where empno=#{empno}
 	</select>
+	
+	<!-- <resultMap type="" id="">
+		<id/>
+		<result/>
+	</resultMap> -->
 </mapper>

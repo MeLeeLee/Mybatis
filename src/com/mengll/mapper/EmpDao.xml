@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mengll.mapper.EmpDao">
+	<!-- 自定义SQL片段 -->
+	<sql id="queryEmp">
+		<if test="1==1">
+				and empno=#{empno}
+		</if>
+		<!-- <foreach collection="list" item="empId" open="and (" close=")" separator="or">
+			id=${empId}
+		</foreach> -->
+	</sql>
+	<select id="selectEmpByEmpno" parameterType="int" resultType="com.mengll.bean.Emp">
+		select * from emp_test 
+		<where>
+			<!-- 引用SQL片段 -->
+			<include refid="queryEmp"></include>
+		</where>
+	</select>
+</mapper>
