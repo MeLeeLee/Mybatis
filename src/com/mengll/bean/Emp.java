@@ -3,6 +3,13 @@ package com.mengll.bean;
 import java.util.Date;
 
 public class Emp {
+	public Dept getDept() {
+		return dept;
+	}
+	public void setDept(Dept dept) {
+		this.dept = dept;
+	}
+	private Dept dept;
 	private int empno;
 	public int getEmpno() {
 		return empno;

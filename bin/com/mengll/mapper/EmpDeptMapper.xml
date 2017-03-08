@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mengll.mapper.EmpDeptMapper">
+	<resultMap type="com.mengll.bean.Emp" id="empDeptMap">
+		<id column="empno" property="empno" />
+		<result column="job" property="job" />
+		<result column="mgr" property="mgr" />
+		<result column="hiredate" property="hiredate" />
+		<result column="sal" property="sal" />
+		<association property="dept" javaType="com.mengll.bean.Dept">
+			<id column="deptno" property="deptNo"/>
+			<result column="loc" property="loc"/>
+			<result column="dname" property="dName"/>
+		</association>
+		<!-- 一对多查询 -->
+		<!-- <collection property="" javaType="">
+			<id/>
+			<result/>
+		</collection> -->
+	</resultMap>
+	<select id="findEmpDept" resultMap="empDeptMap">
+		SELECT emp.*, dept.dname,
+		dept.loc
+		FROM emp, dept
+		WHERE emp.deptno = dept.deptno AND emp.deptno =
+		20
+	</select>
+</mapper>
